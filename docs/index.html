@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>asc（App Store Connect CLI）小白中文教程 · xianyu110</title>
+  <style>
+    :root { color-scheme: light dark; --bg:#0f1419; --fg:#e7ecf3; --muted:#9aa7b5; --card:#1a2330; --accent:#6cb6ff; --ok:#3dd68c; }
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#f6f8fb; --fg:#1b2430; --muted:#5b6b7c; --card:#fff; --accent:#0066cc; --ok:#0a7a44; }
+    }
+    body { margin:0; font-family: ui-sans-serif, system-ui, "Segoe UI", "PingFang SC", "Noto Sans SC", sans-serif; background:var(--bg); color:var(--fg); line-height:1.65; }
+    main { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    h1 { font-size: 1.75rem; margin: 0 0 .5rem; }
+    .sub { color: var(--muted); margin-bottom: 1.5rem; }
+    .card { background: var(--card); border-radius: 12px; padding: 1.25rem 1.35rem; margin: 1rem 0; box-shadow: 0 1px 0 rgba(0,0,0,.08); }
+    a { color: var(--accent); }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; }
+    pre { background: #0b1220; color: #d7e2f0; padding: 1rem; border-radius: 8px; overflow:auto; }
+    @media (prefers-color-scheme: light) { pre { background:#111827; } }
+    ul { padding-left: 1.2rem; }
+    footer { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
+    img.shot { max-width:100%; height:auto; border-radius:8px; margin:.75rem 0; border:1px solid rgba(127,127,127,.25); }
+    figcaption { color:var(--muted); font-size:.85rem; margin:.25rem 0 1rem; }
+    .tag-real { color:var(--ok); font-weight:600; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>asc（App Store Connect CLI）小白中文教程</h1>
+  <p class="sub">社区非官方导读 · 上游 <a href="https://github.com/rorkai/App-Store-Connect-CLI">rorkai/App-Store-Connect-CLI</a> · <a href="https://asccli.sh">asccli.sh</a></p>
+  <div class="card">
+    <p>完整图文教程在 GitHub README：</p>
+    <p><a href="https://github.com/xianyu110/awesome-asc-zh/blob/main/README.md">打开 README →</a></p>
+  </div>
+  <div class="card">
+    <h2>30 秒上手</h2>
+    <pre>curl -fsSL https://asccli.sh/install | bash
+asc version
+# 自备 .p8 后：
+# asc auth login --name MyKey --key-id KEY_ID --issuer-id ISSUER_ID \
+#   --private-key /path/to/AuthKey_KEY_ID.p8 --network
+asc apps list --output table</pre>
+  </div>
+  <div class="card">
+    <h2>截图</h2>
+    <figure>
+      <img class="shot" src="../images/01-install-version.png" alt="" />
+      <figcaption><span class="tag-real">真实截图</span> · asc 6.3.0</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="../images/02-auth-doctor.png" alt="" />
+      <figcaption><span class="tag-real">真实截图</span> · 无密钥时 doctor</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="../images/03-auth-placeholder-status.png" alt="" />
+      <figcaption><span class="tag-real">真实</span> + 占位 auth · system-status</figcaption>
+    </figure>
+  </div>
+  <div class="card">
+    <h2>记住三件事</h2>
+    <ul>
+      <li>自备 App Store Connect API Key（.p8），勿提交仓库</li>
+      <li>先 <code>asc version</code> / <code>system-status</code> 验证安装</li>
+      <li>CI 使用 <code>--bypass-keychain</code></li>
+    </ul>
+  </div>
+  <footer>教程文本 MIT · 上游 MIT · 与 Apple / Rork 无官方隶属 · 2026-11-03</footer>
+</main>
+</body>
+</html>
